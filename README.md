@@ -35,6 +35,9 @@ $ sudo pip3 install awscli
 ```
 
 use aws configure and give your credentials
+```
+aws configure
+```
 
 create a directory and inside that directory create your terraform files to create a instance
 
