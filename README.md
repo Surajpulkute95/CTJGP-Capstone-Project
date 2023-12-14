@@ -35,11 +35,13 @@ $ sudo pip3 install awscli
 ```
 
 use aws configure and give your credentials
-create a directory and inside that directory create your terraform files to create a 
-instance
-Also remember to create key pair using
-$ ssh-keygen -f mykey
 
+create a directory and inside that directory create your terraform files to create a instance
+
+Also remember to create key pair using manually, if not using through Terraform
+```
+$ ssh-keygen -f mykey
+```
 
 Ansible Tasks:
 
