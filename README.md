@@ -50,34 +50,45 @@ Create key pair using manually, if not using through Terraform
 $ ssh-keygen -f mykey
 ```
 
-Ansible Tasks:
+## Ansible Tasks:
 
-Problem Statement: Once you have created new instance using terraform (as 
-part of terraform task), ssh into that instance and install ansible in it. After 
-that, you have to install httpd webserver in the managed node. You donâ€™t have 
-separate managed nodes. So use your ansible workstation itself as the 
-managed node by adding the below line in your host inventory file:
+### Problem Statement: 
+
+Once you have created a new instance using Terraform (as part of Terraform task), ssh into that instance and install Ansible in it. After that, you have to install httpd webserver in the managed node. You do not have separate managed nodes. So use your ansible workstation itself as the managed node by adding the below line in your host inventory file:
 localhost ansible_connection = local
 
-Hint
+#### Hint
 Install ansible using the following commands
+```
 $ sudo yum check-update
+```
+```
 $ sudo yum install python3.8 wget -y
+```
+```
 $ sudo pip3 install awscli boto boto3 ansible
-$ ansible â€“version
+```
+```
+$ ansible version
+```
 
-use aws configure and give your credentials
+Use aws configure and pass your credentials
+```
+aws configure
+```
 
 Create a inventory in the location /etc/ansible/hosts
 localhost ansible_connection=local
 
 
-Docker & Kubernetes Task:
+## Docker & Kubernetes Task:
 
+### Problem Statement: 
 Build a docker image to use the python api and push it to the DockerHub. 
 Create a pod and nodeport service with that Docker image.
 
-Hint: A KOPS cluster would be provided to you. You can use the worker nodes to 
+#### Hint: 
+A KOPS cluster would be provided to you. You can use the worker nodes to 
 write DockerFile and build image. Use the DockerFile provided to you if needed to 
 create the docker image
 
