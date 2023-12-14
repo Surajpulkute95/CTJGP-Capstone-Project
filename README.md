@@ -27,8 +27,12 @@ $ sudo mv terraform /usr/local/bin
 ```
 
 install the aws cli
+```
 $ sudo apt-get install python3-pip -y
+```
+```
 $ sudo pip3 install awscli
+```
 
 use aws configure and give your credentials
 create a directory and inside that directory create your terraform files to create a 
