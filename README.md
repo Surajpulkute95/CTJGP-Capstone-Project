@@ -34,12 +34,14 @@ $ sudo apt-get install python3-pip -y
 $ sudo pip3 install awscli
 ```
 
-use aws configure and give your credentials
+Use aws configure and give your credentials
 ```
 aws configure
 ```
 
 create a directory and inside that directory create your terraform files to create a instance
+
+https://github.com/Mehar-Nafis/TerraformLabs/blob/main/AWS-Key%20Pair%20Generation.md
 
 Also remember to create key pair using manually, if not using through Terraform
 ```
