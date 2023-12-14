@@ -39,11 +39,11 @@ Use aws configure and give your credentials
 aws configure
 ```
 
-create a directory and inside that directory create your terraform files to create a instance
+Create a directory and inside that directory create your terraform files to create a instance. Refer to the below
 
-https://github.com/Mehar-Nafis/TerraformLabs/blob/main/AWS-Key%20Pair%20Generation.md
+* [Create Key-pair and Launch EC2 Instance](https://github.com/Mehar-Nafis/TerraformLabs/blob/main/AWS-Key%20Pair%20Generation.md)
 
-Also remember to create key pair using manually, if not using through Terraform
+Create key pair using manually, if not using through Terraform
 ```
 $ ssh-keygen -f mykey
 ```
