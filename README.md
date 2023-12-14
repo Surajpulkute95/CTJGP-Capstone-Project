@@ -62,16 +62,16 @@ localhost ansible_connection = local
 #### Hint
 Install ansible using the following commands
 ```
-$ sudo yum check-update
+sudo yum check-update
 ```
 ```
-$ sudo yum install python3.8 wget -y
+sudo yum install python3.8 wget -y
 ```
 ```
-$ sudo pip3 install awscli boto boto3 ansible
+sudo pip3 install awscli boto boto3 ansible
 ```
 ```
-$ ansible version
+ansible version
 ```
 
 Use aws configure and pass your credentials
