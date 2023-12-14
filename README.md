@@ -11,27 +11,27 @@ ansible WS once it is created.
 #### Hints:
 In your terraform WS, install terraform using following commands
 ```
-$ sudo apt update
+sudo apt update
 ```
 ```
-$ sudo apt install wget unzip -y
+sudo apt install wget unzip -y
 ```
 ```
-$ wget https://releases.hashicorp.com/terraform/1.0.11/terraform_1.0.11_linux_amd64.zip
+wget https://releases.hashicorp.com/terraform/1.0.11/terraform_1.0.11_linux_amd64.zip
 ```
 ```
-$ unzip terraform_1.0.11_linux_amd64.zip
+unzip terraform_1.0.11_linux_amd64.zip
 ```
 ```
-$ sudo mv terraform /usr/local/bin
+sudo mv terraform /usr/local/bin
 ```
 
 install the aws cli
 ```
-$ sudo apt-get install python3-pip -y
+sudo apt-get install python3-pip -y
 ```
 ```
-$ sudo pip3 install awscli
+sudo pip3 install awscli
 ```
 
 Use aws configure and give your credentials
@@ -47,7 +47,7 @@ Refer to the below
 
 Create key pair using manually, if not using through Terraform
 ```
-$ ssh-keygen -f mykey
+ssh-keygen -f mykey
 ```
 
 
