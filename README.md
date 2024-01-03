@@ -79,7 +79,7 @@ Use aws configure and pass your credentials
 aws configure
 ```
 
-Create a inventory in the location /etc/ansible/hosts
+Create a inventory in the location /etc/ansible/hosts and add the below
 ```
 localhost ansible_connection=local
 ```
