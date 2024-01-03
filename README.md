@@ -91,8 +91,9 @@ Build a docker image to use the python api and push it to the DockerHub.
 Create a pod and nodeport service with that Docker image.
 
 #### Hint: 
-Create a KOPS Cluster. You can use the worker nodes to 
-write DockerFile and build images.
+Create a KOPS Cluster. Refer to the below link for the Kops Script
+* [Kops Script](https://github.com/Mehar-Nafis/KopsScript/blob/main/README.md)
+You can use the worker nodes to write DockerFile and build images.
 
 ```
 vi requirements.txt
