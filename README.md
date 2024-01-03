@@ -80,7 +80,9 @@ aws configure
 ```
 
 Create a inventory in the location /etc/ansible/hosts
+```
 localhost ansible_connection=local
+```
 
 
 ## Docker & Kubernetes Task:
@@ -90,16 +92,19 @@ Build a docker image to use the python api and push it to the DockerHub.
 Create a pod and nodeport service with that Docker image.
 
 #### Hint: 
-A KOPS cluster would be provided to you. You can use the worker nodes to 
-write DockerFile and build image. Use the DockerFile provided to you if needed to 
-create the docker image
-
-requirements.txt
-
+Create a KOPS Cluster. You can use the worker nodes to 
+write DockerFile and build images.
+```
+vi requirements.txt
+```
+```
 Flask==1.0.1
 requests==2.8.1
-
-Dockerfile
+```
+```
+vi Dockerfile
+```
+```
 
 FROM ubuntu:18.04
 LABEL maintainer="Admin CloudThat"
@@ -110,9 +115,11 @@ WORKDIR /app
 RUN pip install -r requirements.txt
 COPY ./code /app
 CMD [ "python", "./app.py" ]
-
-app.py
-
+```
+```
+vi app.py
+```
+```
 #!/usr/bin/env python3.8
 # -*- coding: utf-8 -*-
 import os
@@ -169,3 +176,4 @@ def add_book():
 
 if __name__ == '__main__':
     app.run(threaded=True, host='0.0.0.0', port=5000)
+```
