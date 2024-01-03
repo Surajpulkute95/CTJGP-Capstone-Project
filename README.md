@@ -556,7 +556,9 @@ kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | gre
 echo "******************          END          ******************" >> token.txt
 echo "                                                   " >> token.txt
 cat token.txt
-
+```
+```
+. ./kops.sh
 ```
 ```
 vi requirements.txt
