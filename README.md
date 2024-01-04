@@ -106,8 +106,7 @@ requests==2.8.1
 ```
 vi Dockerfile
 ```
-```
-
+```Dockerfile
 FROM ubuntu:18.04
 LABEL maintainer="Admin CloudThat"
 RUN apt-get update -y && \
