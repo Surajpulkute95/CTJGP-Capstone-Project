@@ -94,7 +94,7 @@ Create a pod and nodeport service with that Docker image.
 Create a KOPS Cluster. Refer to the below link for the Kops Script
 * [Kops Script](https://github.com/Mehar-Nafis/KopsScript/blob/main/README.md)
   
-You can use the worker nodes to write DockerFile and build images.
+You can use the worker nodes to write DockerFile and build images. Create the DockerFile, requirements.txt and python api code in the same directory. Use the following commands to build the image and push it to Docker hub
 
 ```
 vi requirements.txt
@@ -179,3 +179,46 @@ def add_book():
 if __name__ == '__main__':
     app.run(threaded=True, host='0.0.0.0', port=5000)
 ```
+```
+docker login -u <username>
+```
+```
+docker build -t <username>/test-flask-app:v1 .
+```
+```
+docker push <username>/test-flask-app:v1 
+```
+In the jumper node create a pod that uses the above created image. Use the pod.yaml file.
+```
+vi pod.yaml
+```
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: flask-pod
+  labels:
+    app: flask-app
+spec:
+  containers:
+  - name: flask-app
+    image: mandarct/my-flask-demo
+    ports:
+      - containerPort: 5000
+```
+Use the following command to create the pod and a service for that pod
+```
+kubectl apply -f <pod file name.yaml>
+```
+```
+kubectl expose po <pod name> --type NodePort --port 5000
+```
+kubectl get svc
+```
+Use the public IP of the worker nodes and nodeport number to access in web page
+
+Example
+http://PublicIP:NodePort_no/v1/books/
+http://PublicIP:NodePort_no/v1/books/navathe
+http://PublicIP:NodePort_no/v1/books/hightower
+http://PublicIP:NodePort_no/v1/books/ritchie
