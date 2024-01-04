@@ -212,6 +212,7 @@ kubectl apply -f <pod file name.yaml>
 ```
 kubectl expose po <pod name> --type NodePort --port 5000
 ```
+```
 kubectl get svc
 ```
 Use the public IP of the worker nodes and nodeport number to access in web page
