@@ -218,7 +218,7 @@ kubectl get svc
 Use the public IP of the worker nodes and nodeport number to access in web page
 
 Example
-http://PublicIP:NodePort_no/v1/books/
-http://PublicIP:NodePort_no/v1/books/navathe
-http://PublicIP:NodePort_no/v1/books/hightower
-http://PublicIP:NodePort_no/v1/books/ritchie
+* http://PublicIP:NodePort_no/v1/books/
+* http://PublicIP:NodePort_no/v1/books/navathe
+* http://PublicIP:NodePort_no/v1/books/hightower
+* http://PublicIP:NodePort_no/v1/books/ritchie
