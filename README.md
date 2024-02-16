@@ -65,10 +65,10 @@ localhost ansible_connection = local
 #### Hint
 Install ansible using the following commands
 ```
-sudo yum check-update
+sudo apt check-update
 ```
 ```
-sudo yum install python3 python3-pip wget -y
+sudo apt install python3 python3-pip wget -y
 ```
 ```
 sudo pip3 install awscli boto boto3 ansible
