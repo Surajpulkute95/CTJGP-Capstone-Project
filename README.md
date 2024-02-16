@@ -7,7 +7,7 @@ Design and implement an end-to-end cloud infrastructure automation and deploymen
 
 ### Problem Statement: 
 Launch a Ubuntu EC2 instance (t2.micro) to be used as your terraform workstation. From that WS, using Terraform, launch an EC2 
-instance (instance type: t2.micro, OS: Red Hat Linux) to be used as an ansible 
+instance (instance type: t2.micro, OS: Ubuntu) to be used as an ansible 
 workstation for the ansible task. Please make sure that you create a key (using ssh-keygen) and use it while launching the EC2 so that we can SSH into the 
 ansible WS once it is created.
 
