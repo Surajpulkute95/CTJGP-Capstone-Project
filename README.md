@@ -1,5 +1,8 @@
 # Capstone-Project
 
+## Problem Statement:
+Design and implement an end-to-end cloud infrastructure automation and deployment solution using Terraform, Ansible, Docker, and Kubernetes.
+
 ## Terraform Task:
 
 ### Problem Statement: 
