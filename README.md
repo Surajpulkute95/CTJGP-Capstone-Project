@@ -65,7 +65,7 @@ localhost ansible_connection = local
 #### Hint
 Install ansible using the following commands
 ```
-sudo apt check-update
+sudo apt update
 ```
 ```
 sudo apt install python3 python3-pip wget -y
