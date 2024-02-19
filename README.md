@@ -197,7 +197,7 @@ docker build -t <username>/test-flask-app:v1 .
 ```
 docker push <username>/test-flask-app:v1 
 ```
-To check if the image built is getting exposed properly, run a container from the same image.
+To check if the image built is accessible, run a container from the same image and expose it at port 80
 ```
 docker run -d -p 80:5000 meharnafisdockerhub/test-flask-app:v1
 ```
