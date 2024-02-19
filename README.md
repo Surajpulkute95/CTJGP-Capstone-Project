@@ -120,6 +120,10 @@ RUN pip install -r requirements.txt
 COPY ./code /app
 CMD [ "python", "./app.py" ]
 ```
+Create a director `code`
+```
+mkdir code && cd code
+```
 ```
 vi app.py
 ```
@@ -182,6 +186,9 @@ if __name__ == '__main__':
     app.run(threaded=True, host='0.0.0.0', port=5000)
 ```
 ```
+cd ..
+```
+```
 docker login -u <username>
 ```
 ```
@@ -190,6 +197,12 @@ docker build -t <username>/test-flask-app:v1 .
 ```
 docker push <username>/test-flask-app:v1 
 ```
+To check if the image built is getting exposed properly, run a container from the same image.
+```
+docker run -d -p 80:5000 meharnafisdockerhub/test-flask-app:v1
+```
+Now create your Kubernetes Cluster and deploy the app.
+
 In the jumper node create a pod that uses the above created image. Use the pod.yaml file.
 ```
 vi pod.yaml
