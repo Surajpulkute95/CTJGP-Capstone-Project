@@ -71,16 +71,13 @@ sudo apt update
 sudo apt install python3 python3-pip wget -y
 ```
 ```
-sudo pip3 install awscli boto boto3 ansible
+sudo pip3 install boto boto3 ansible
 ```
 ```
 ansible --version
 ```
 
-Use aws configure and pass your credentials
-```
-aws configure
-```
+
 
 Create a inventory in the location /etc/ansible/hosts and add the below
 ```
