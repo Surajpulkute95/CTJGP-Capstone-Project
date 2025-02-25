@@ -217,10 +217,10 @@ spec:
 ```
 Use the following command to create the pod and a service for that pod
 ```
-kubectl apply -f <pod file name.yaml>
+kubectl apply -f pod.yaml
 ```
 ```
-kubectl expose po <pod name> --type NodePort --port 5000
+kubectl expose po flask-pod --type NodePort --port 5000
 ```
 ```
 kubectl get svc
