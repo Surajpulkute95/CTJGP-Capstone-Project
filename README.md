@@ -194,10 +194,7 @@ docker build -t <username>/test-flask-app:v1 .
 ```
 docker push <username>/test-flask-app:v1 
 ```
-To check if the image built is accessible, run a container from the same image and expose it at port 80
-```
-docker run -d -p 80:5000 meharnafisdockerhub/test-flask-app:v1
-```
+
 Now create your Kubernetes Cluster and deploy the app.
 
 In the jumper node create a pod that uses the above created image. Use the pod.yaml file.
