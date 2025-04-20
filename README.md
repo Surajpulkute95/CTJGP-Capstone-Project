@@ -640,7 +640,7 @@ docker build -t <username>/test-flask-app:v1 .
 docker push <username>/test-flask-app:v1 
 ```
 
-Now create your Kubernetes Cluster and deploy the app.
+Now deploy the app.
 
 In the jumper node create a pod that uses the above created image. Use the pod.yaml file.
 ```
