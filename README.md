@@ -23,7 +23,7 @@ sudo apt install wget unzip -y
 wget https://releases.hashicorp.com/terraform/1.10.3/terraform_1.10.3_linux_amd64.zip
 ```
 ```
-unzip terraform_1.0.13_linux_amd64.zip
+unzip terraform_1.0.3_linux_amd64.zip
 ```
 ```
 sudo mv terraform /usr/local/bin
