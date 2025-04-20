@@ -200,6 +200,9 @@ Create a pod and nodeport service with that Docker image.
 #### Steps: 
 Create a KOPS Cluster. 
 ```
+vi kops.sh
+```
+```
 #!/bin/bash
 
 echo "Let's get started with Kubernetes cluster creation using KOPS!"
@@ -531,6 +534,9 @@ done
 } > token.txt
 
 cat token.txt
+```
+```
+. ./kops.sh
 ```
   
 You can use the worker nodes to write DockerFile and build images. Create the DockerFile, requirements.txt and python api code in the same directory. Use the following commands to build the image and push it to Docker hub
