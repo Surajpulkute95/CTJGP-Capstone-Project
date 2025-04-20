@@ -62,15 +62,16 @@ provider "aws" {
   region  = "us-east-1"
 }
  
-resource "aws_instance" "instance" {
-  ami           = "ami-00c257e12d6828491"
+resource "aws_instance" "ec2" {
   instance_type = "t2.micro"
+  ami = "ami-023c11a32b0207432"                                  
   key_name = "capstone-key"
-  depends_on = [ aws_key_pair.capstone-key ]      
+  depends_on = [ aws_key_pair.capstone-key ]                      #The Key should be created first
+  vpc_security_group_ids = [aws_security_group.terraform_sg.id]   #attaching a security group for ssh
   tags = {
-    Name = "Mehar-TF-1"
-  }
+    Name = "Ansible Server"}
 }
+
 #Generating the Key pair
 resource "tls_private_key" "capstone_key_pair" {
   algorithm = "RSA"
@@ -90,6 +91,28 @@ resource "local_file" "mykey_private" {
 resource "local_file" "mykey_public" {
   content = tls_private_key.capstone_key_pair.public_key_openssh
   filename = "capstone-key.pub"
+}
+
+
+#Creating the security Group and enabling port 22 for ssh
+resource "aws_security_group" "terraform_sg" {
+  name        = "Mehar-allow-ssh"
+  description = "security group that allows ssh and all egress traffic"
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  tags = {
+    Name = "Mehar-allow-ssh"
+  }
 }
 ```
 Initialise the directory
