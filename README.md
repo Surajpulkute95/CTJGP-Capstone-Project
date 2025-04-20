@@ -540,7 +540,9 @@ cat token.txt
 ```
   
 You can use the worker nodes to write DockerFile and build images. Create the DockerFile, requirements.txt and python api code in the same directory. Use the following commands to build the image and push it to Docker hub
-
+```
+mkdir task3 && cd task3
+```
 ```
 vi requirements.txt
 ```
