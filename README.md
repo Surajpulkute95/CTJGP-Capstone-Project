@@ -20,16 +20,19 @@ sudo apt update
 sudo apt install wget unzip -y
 ```
 ```
-wget https://releases.hashicorp.com/terraform/1.0.11/terraform_1.0.11_linux_amd64.zip
+wget https://releases.hashicorp.com/terraform/1.10.3/terraform_1.10.3_linux_amd64.zip
 ```
 ```
-unzip terraform_1.0.11_linux_amd64.zip
+unzip terraform_1.0.13_linux_amd64.zip
 ```
 ```
 sudo mv terraform /usr/local/bin
 ```
+```
+rm terraform_1.10.3_linux_amd64.zip
+```
 
-install the aws cli
+Install the aws cli
 ```
 sudo apt-get install python3-pip -y
 ```
@@ -42,15 +45,68 @@ Use aws configure and give your credentials
 aws configure
 ```
 
-Create a directory and inside that directory create your terraform files to create an instance and ssh into it.
-
-Refer to the below
-
-* [Create Key-pair and Launch EC2 Instance](https://github.com/Mehar-Nafis/TerraformLabs/blob/main/AWS-Key%20Pair%20Generation.md)
-
-Create key pair using manually, if not using through Terraform
+Create a directory and inside that directory create your Terraform files to create an instance and ssh into it.
 ```
-ssh-keygen -f mykey
+mkdir lab
+```
+```
+cd lab
+```
+```
+vi main.tf
+```
+Copy and post the eblow configuration
+```
+provider "aws" {
+  profile = "default" # This line is not mandatory.
+  region  = "us-east-1"
+}
+ 
+resource "aws_instance" "instance" {
+  ami           = "ami-00c257e12d6828491"
+  instance_type = "t2.micro"
+  key_name = "capstone-key"
+  depends_on = [ aws_key_pair.capstone-key ]      
+  tags = {
+    Name = "Mehar-TF-1"
+  }
+}
+#Generating the Key pair
+resource "tls_private_key" "capstone_key_pair" {
+  algorithm = "RSA"
+  rsa_bits  = 4096
+}
+#Storing the Public key in AWS
+resource "aws_key_pair" "capstone-key" {
+  key_name   = "capstone-key"
+  public_key = tls_private_key.capstone_key_pair.public_key_openssh  #Passing the Public Key
+}
+ 
+#Store the private Key on Local
+resource "local_file" "mykey_private" {
+  content = tls_private_key.capstone_key_pair.private_key_pem
+  filename = "capstone-key"
+}
+resource "local_file" "mykey_public" {
+  content = tls_private_key.capstone_key_pair.public_key_openssh
+  filename = "capstone-key.pub"
+}
+```
+Initialise the directory
+```
+terraform init
+```
+Plan
+```
+terraform plan
+```
+Apply
+```
+terraform apply -auto-approve
+```
+Once the resources are created, login into the newly created Instance using the below command
+```
+ssh -i "capstone-key" ubuntu@IP
 ```
 
 
