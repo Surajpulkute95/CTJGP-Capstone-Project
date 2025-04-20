@@ -174,14 +174,14 @@ vi playbook.yaml
   hosts: all
   become: yes
   tasks:
-    - name: Task1 will install httpd
+    - name: Task1 will install web-server
       apt:
-        name: httpd
+        name: apache2
         update_cache: yes
         state: latest
-    - name: Task2 will start the httpd
+    - name: Task2 will start the web-server
       service:
-        name: httpd
+        name: apache2
         state: started
 ```
 Execute the playbook
