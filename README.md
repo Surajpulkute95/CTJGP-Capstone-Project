@@ -139,6 +139,34 @@ Create a inventory in the location /etc/ansible/hosts and add the below
 ```
 localhost ansible_connection=local
 ```
+Create a directory
+```
+mkdir ansible-lab && cd ansible-lab
+```
+```
+vi playbook.yaml
+```
+```
+- name: This play will install apache web servers on all the hosts
+  hosts: all
+  become: yes
+  tasks:
+    - name: Task1 will install httpd
+      apt:
+        name: httpd
+        update_cache: yes
+        state: latest
+    - name: Task2 will start the httpd
+      service:
+        name: httpd
+        state: started
+```
+Execute the playbook
+```
+ansible-playbook playbook.yaml
+```
+Access the webserver on the Ip of the same machine on port 80
+
 
 ## Docker & Kubernetes Task:
 
