@@ -11,7 +11,7 @@ instance (instance type: t2.micro, OS: Ubuntu) to be used as an ansible
 workstation for the ansible task. Please make sure that you create a key (using ssh-keygen) and use it while launching the EC2 so that we can SSH into the 
 ansible WS once it is created.
 
-#### Hints:
+#### Steps:
 In your terraform WS, install terraform using following commands
 ```
 sudo apt update
@@ -118,7 +118,7 @@ ssh -i "capstone-key" ubuntu@IP
 Once you have created a new instance using Terraform (as part of Terraform task), ssh into that instance and install Ansible in it. After that, you have to install httpd webserver in the managed node. You do not have separate managed nodes. So use your ansible workstation itself as the managed node by adding the below line in your host inventory file:
 localhost ansible_connection = local
 
-#### Hint
+#### Steps:
 Install ansible using the following commands
 ```
 sudo apt update
@@ -174,7 +174,7 @@ Access the webserver on the Ip of the same machine on port 80
 Build a docker image to use the python api and push it to the DockerHub. 
 Create a pod and nodeport service with that Docker image.
 
-#### Hint: 
+#### Steps: 
 Create a KOPS Cluster. Refer to the below link for the Kops Script
 * [Kops Script](https://github.com/Mehar-Nafis/KopsScript/blob/main/README.md)
   
