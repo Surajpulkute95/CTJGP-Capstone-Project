@@ -147,7 +147,7 @@ mkdir ansible-lab && cd ansible-lab
 vi playbook.yaml
 ```
 ```
-- name: This play will install apache web servers on all the hosts
+- name: This play will install httpd web servers on all the hosts
   hosts: all
   become: yes
   tasks:
