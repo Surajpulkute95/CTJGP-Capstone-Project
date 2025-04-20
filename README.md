@@ -658,7 +658,7 @@ metadata:
 spec:
   containers:
   - name: flask-app
-    image: mandarct/my-flask-demo
+    image: mandarct/my-flask-demo		##change this iamge name
     ports:
       - containerPort: 5000
 ```
