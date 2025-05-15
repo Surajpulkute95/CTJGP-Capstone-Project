@@ -144,7 +144,6 @@ localhost ansible_connection = local
 #### Steps:
 Install ansible using the following commands
 ```
-```
 sudo apt update
 sudo apt install -y software-properties-common
 sudo add-apt-repository --yes --update ppa:ansible/ansible
