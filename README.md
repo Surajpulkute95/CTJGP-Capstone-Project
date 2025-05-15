@@ -144,13 +144,12 @@ localhost ansible_connection = local
 #### Steps:
 Install ansible using the following commands
 ```
+```
 sudo apt update
-```
-```
-sudo apt install python3 python3-pip wget -y
-```
-```
-sudo pip3 install boto boto3 ansible
+sudo apt install -y software-properties-common
+sudo add-apt-repository --yes --update ppa:ansible/ansible
+sudo apt install -y ansible
+
 ```
 ```
 ansible --version
